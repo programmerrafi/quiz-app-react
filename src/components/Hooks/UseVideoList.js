@@ -7,10 +7,7 @@ export default function useVideoList() {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    console.log("useEffect");
     const fetchVideos = async () => {
-      console.log("===============Ami asci 3s pore=");
-      console.log("====================================");
       // database related works
       const db = getDatabase();
       const videosRef = ref(db, "videos");
