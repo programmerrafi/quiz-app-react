@@ -3,16 +3,17 @@ import useVideoList from "../../Hooks/UseVideoList";
 import Video from "./Video";
 function Videos() {
   const { loading, error, videos } = useVideoList();
+  console.log(videos);
 
   return (
     <div className="grid grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))] justify-items-center gap-5 2xl:gap-x-16">
       {videos?.length > 0 &&
         videos?.map((video) =>
-          video.noq > 0 ? (
+          video?.noq > 0 ? (
             <Link
-              to={`/quiz/${video.youtubeID}`}
+              to={`/quiz/${video?.youtubeID}`}
               state={video?.title}
-              key={video.youtubeID}
+              key={video?.youtubeID}
             >
               <Video
                 title={video?.title}
@@ -22,7 +23,7 @@ function Videos() {
             </Link>
           ) : (
             <Video
-              key={video.youtubeID}
+              key={video?.youtubeID}
               title={video?.title}
               id={video?.youtubeID}
               noq={video?.noq}
