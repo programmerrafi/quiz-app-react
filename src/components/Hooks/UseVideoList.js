@@ -19,8 +19,8 @@ export default function useVideoList() {
         // request firebase database
         const snapshot = await get(videoQuery);
         setLoading(false);
-        if (snapshot.exists()) {
-          setVideos(Object.values(snapshot.val()));
+        if (snapshot?.exists()) {
+          setVideos(Object.values(snapshot?.val()));
         }
       } catch (err) {
         console.log(err);
@@ -30,7 +30,9 @@ export default function useVideoList() {
     };
 
     return () => {
-      fetchVideos();
+      setTimeout(() => {
+        fetchVideos();
+      }, 3000);
     };
   }, []);
 
