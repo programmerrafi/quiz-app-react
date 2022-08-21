@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+  .tooltip {
+   @apply block absolute -left-16 bottom-5 text-sm font-medium bg-black rounded-lg border shadow-sm transition-all duration-200 opacity-0 invisible;
+   @apply before:absolute before:w-3 before:h-3 before:bg-black before:rotate-45 before:left-1/2 before:-translate-x-1/2 before:bottom-0 before:translate-y-1/2;
+  }
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+}
+
